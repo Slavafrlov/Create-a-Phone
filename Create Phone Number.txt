@@ -1,0 +1,41 @@
+function createPhoneNumber(numbers){
+numbers=numbers.toString();
+var res="";
+for(i=0;i<numbers.length;i++)
+{
+if(numbers[i]!=',')
+{
+res+=numbers[i];
+}
+}
+
+var fstr="";
+var j=0;
+var i=0;
+for(i;i<res.length;)
+{
+if(j==0)
+{
+fstr+='(';
+}
+else if(j==4)
+{
+fstr+=')';
+}
+else if(j==5)
+{
+fstr+=' ';
+}
+else if(j==9)
+{
+fstr+='-';
+}
+else
+{
+fstr+=res[i];
+i++;
+}
+j=j+1;
+}
+return fstr;
+}
